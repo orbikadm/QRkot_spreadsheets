@@ -17,17 +17,15 @@ class CRUDBase:
         obj_id: int,
         session: AsyncSession,
     ):
-        db_obj = await session.execute(
+        return (await session.execute(
             select(self.model).where(self.model.id == obj_id)
-        )
-        return db_obj.scalars().first()
+        )).scalars().first()
 
     async def get_multi(
             self,
             session: AsyncSession
     ):
-        db_objs = await session.execute(select(self.model))
-        return db_objs.scalars().all()
+        return (await session.execute(select(self.model))).scalars().all()
 
     async def create(
             self,

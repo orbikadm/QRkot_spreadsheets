@@ -13,6 +13,7 @@
   - создание проектов для сбора пожертвований
   - отправка пожертвований (пожертвования отправляются в фонд, а не в конкретный проект)
   - сервис автоматически просчитывает и распредеяет пожертвования в имеющиеся фонды
+  - формирование отчета о продолжительности сбора закрытых проектов
 
 
 ## Инструкция по установке
@@ -59,6 +60,7 @@ uvicorn app.main:app
 "/donation"
 "/auth"
 "/user"
+"/google"
 ```
 
 ### Примеры запросов:
@@ -73,6 +75,8 @@ uvicorn app.main:app
 - [SQLAlchemy](https://pypi.org/project/SQLAlchemy/);
 - [Alembic](https://alembic.sqlalchemy.org/en/latest/)
 - [Pydantic](https://docs.pydantic.dev/latest/)
+- [Google Sheets](https://developers.google.com/sheets/api/guides/concepts?hl=ru)
+- [Google Drive](https://developers.google.com/drive/api/guides/about-sdk?hl=ru)
 
 ## Информация об авторе
 

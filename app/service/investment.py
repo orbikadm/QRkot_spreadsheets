@@ -26,7 +26,7 @@ async def investment_process(
     objs_db = await session.execute(
         select(obj_db_model)
         .where(obj_db_model.fully_invested == 0)
-        .order_by(obj_db_model.create_date.desc())
+        .order_by(obj_db_model.create_date)
     )
 
     objs_db = objs_db.scalars().all()
